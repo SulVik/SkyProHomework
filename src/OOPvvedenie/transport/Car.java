@@ -2,13 +2,8 @@ package OOPvvedenie.transport;
 
 import java.util.*;
 
-public class Car {
-    private final String brand;
-    private final String model;
+public class Car extends Transport {
     private double engineVolume;
-    private String color;
-    private final int productionYear;
-    private final String productionCountry;
     private String transmissionType;
     private final String carBodyStyle;
     private String registrationID;
@@ -17,37 +12,14 @@ public class Car {
     private final Key key;
 
 
-    public Car(String brand, String model, double engineVolume, String color, int productionYear,
-               String productionCountry, String transmissionType, String carBodyStyle, String registrationID,
+    public Car(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed, double engineVolume,
+               String transmissionType, String carBodyStyle, String registrationID,
                int numberOfSeats, boolean isWinterTyres, Key key) {
 
-        if (brand == null) {
-            this.brand = "Бренд неизвестен";
-        } else {
-            this.brand = brand;
-        }
+        super(brand, model, productionYear, productionCountry, color, maxSpeed);
 
-        if (model == null) {
-            this.model = "Модель неизвестна";
-        } else {
-            this.model = model;
-        }
 
         setEngineVolume(engineVolume);
-
-        setColor(color);
-
-        if (productionYear <= 0) {
-            this.productionYear = 2000;
-        } else {
-            this.productionYear = productionYear;
-        }
-
-        if (productionCountry == null) {
-            this.productionCountry = "страна производитель отсутствует";
-        } else {
-            this.productionCountry = productionCountry;
-        }
 
         setTransmissionType(transmissionType);
 
@@ -70,13 +42,6 @@ public class Car {
         this.key = key;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
 
     public double getEngineVolume() {
         return engineVolume;
@@ -90,25 +55,6 @@ public class Car {
         }
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null || color.isEmpty()) {
-            this.color = "white";
-        } else {
-            this.color = color;
-        }
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
-    }
 
     public String getTransmissionType() {
         return transmissionType;
@@ -165,13 +111,8 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", engineVolume=" + engineVolume +
-                ", color='" + color + '\'' +
-                ", productionYear=" + productionYear +
-                ", productionCountry='" + productionCountry + '\'' +
+        return super.toString() + " " + "Car{" +
+                "engineVolume=" + engineVolume +
                 ", transmissionType='" + transmissionType + '\'' +
                 ", carBodyStyle='" + carBodyStyle + '\'' +
                 ", registrationID='" + registrationID + '\'' +

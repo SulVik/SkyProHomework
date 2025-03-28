@@ -4,15 +4,18 @@ import OOPvvedenie.transport.*;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Car car1 = new Car("Lada", "Vesta", 1.6, null, 2020,
-                null, null, "universal", "o777oo77rus",
-                0, false, new Car.Key(true, false));
+        Car car2 = new Car("Lada", "Vesta", 2020, "Russia", "white",
+                170, 1.6, "manual","universal", "o777oo77rus",
+                5, true, new Car.Key(true, false));
+        car2.setCurrentSeasonTyres();
 
-        System.out.println(car1);
+        Bus bus1 = new Bus("LIAZ", "autobus", -15, "Russia", null, 90);
+        Bus bus2 = new Bus("PAZ", "the pazik", 2020, "", null, 90);
+        Bus bus3 = new Bus("GAZ", "vector", 2024, null, "grey",90);
 
-        car1.setCurrentSeasonTyres();
-
-        System.out.println(car1);
-
+        System.out.println(car2);
+        System.out.println(bus1);
+        System.out.println(bus2);
+        System.out.println(bus3);
     }
 }
