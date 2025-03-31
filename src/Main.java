@@ -1,15 +1,21 @@
+import OOPvvedenie.transport.*;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Car car2 = new Car("Lada", "Vesta", 2020, "Russia", "white",
+                170, 1.6, "manual","universal", "o777oo77rus",
+                5, true, new Car.Key(true, false));
+        car2.setCurrentSeasonTyres();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Bus bus1 = new Bus("LIAZ", "autobus", -15, "Russia", null, 90);
+        Bus bus2 = new Bus("PAZ", "the pazik", 2020, "", null, 90);
+        Bus bus3 = new Bus("GAZ", "vector", 2024, null, "grey",90);
+
+        System.out.println(car2);
+        System.out.println(bus1);
+        System.out.println(bus2);
+        System.out.println(bus3);
     }
 }
