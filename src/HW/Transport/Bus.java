@@ -1,8 +1,11 @@
 package HW.Transport;
 
+import HW.Driver.*;
+
 public class Bus extends Transport implements Competitive{
-    public Bus(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
+
+    public Bus(String brand, String model, double engineVolume, DriverCatD driverCatD) {
+        super(brand, model, engineVolume, driverCatD);
     }
 
     @Override

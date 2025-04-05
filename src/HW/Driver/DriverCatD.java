@@ -3,7 +3,14 @@ package HW.Driver;
 import HW.Transport.*;
 
 public class DriverCatD extends Driver{
-    public DriverCatD(String fio, boolean isHasLicense, int yearOfExperience, Bus bus) {
-        super(fio, isHasLicense, yearOfExperience, bus);
+
+    private final String CATEGORY = "D";
+
+    public DriverCatD(String fio, boolean isHasLicense, int yearOfExperience) {
+        super(fio, isHasLicense, yearOfExperience);
+    }
+
+    public String getCATEGORY() {
+        return CATEGORY;
     }
 }

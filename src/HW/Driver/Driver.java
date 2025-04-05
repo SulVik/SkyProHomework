@@ -2,17 +2,15 @@ package HW.Driver;
 
 import HW.Transport.*;
 
-public abstract class Driver<T extends Transport & Competitive> {
+public abstract class Driver {
     private String fio;
     private boolean isHasLicense;
     private int yearOfExperience;
-    private T competitiveTransport;
 
-    public Driver(String fio, boolean isHasLicense, int yearOfExperience, T competitiveTransport) {
+    public Driver(String fio, boolean isHasLicense, int yearOfExperience) {
         setFio(fio);
         this.isHasLicense = isHasLicense;
         setYearOfExperience(yearOfExperience);
-        setCompetitiveTransport(competitiveTransport);
     }
 
     public String getFio() {
@@ -39,45 +37,33 @@ public abstract class Driver<T extends Transport & Competitive> {
         this.yearOfExperience = (yearOfExperience < 0) ? 0 : yearOfExperience;
     }
 
-    public T getCompetitiveTransport() {
-        return competitiveTransport;
-    }
-
-    public void setCompetitiveTransport(T competitiveTransport) {
-        this.competitiveTransport = competitiveTransport;
-    }
 
     public void toStart() {
-        if (this.isHasLicense && this.competitiveTransport != null) {
+        if (this.isHasLicense) {
             System.out.println(fio + " начинает движение");
         } else {
-            System.out.println(fio + " не может начать движение (не управляет ТС)");
+            System.out.println(fio + " не может начать движение (не управляет ТС, нет прав)");
         }
     }
 
     public void toStop() {
-        if (this.isHasLicense && this.competitiveTransport != null) {
+        if (this.isHasLicense) {
             System.out.println(fio + " останавливается");
         } else {
-            System.out.println(fio + " не может останавиться (не управляет ТС)");
+            System.out.println(fio + " не может останавиться (не управляет ТС, нет прав)");
         }
     }
 
     public void toRefuel() {
-        if (this.isHasLicense && this.competitiveTransport != null) {
-            System.out.println(fio + " заправился");
-        } else {
-            System.out.println(fio + " не может заправиться (не управляет ТС)");
-        }
+        System.out.println(fio + " заправился");
     }
 
-    public void readyToCompetition() {
-        if (this.isHasLicense && this.competitiveTransport != null) {
-            System.out.println("водитель " + fio + " управляет автомобилем " + competitiveTransport.toString() + " и будет участвовать в заезде");
-        } else {
-            System.out.println("водитель " + fio + " не может участвовать в заезде");
-        }
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "fio='" + fio + '\'' +
+                ", isHasLicense=" + isHasLicense +
+                ", yearOfExperience=" + yearOfExperience +
+                '}';
     }
-
-
 }

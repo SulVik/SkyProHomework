@@ -1,8 +1,11 @@
 package HW.Transport;
 
-public class Car extends Transport implements Competitive{
-    public Car(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
+import HW.Driver.*;
+
+public class Car extends Transport implements Competitive {
+
+    public Car(String brand, String model, double engineVolume, DriverCatB driverCatB) {
+        super(brand, model, engineVolume, driverCatB);
     }
 
     @Override
