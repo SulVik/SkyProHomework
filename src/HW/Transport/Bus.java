@@ -2,7 +2,7 @@ package HW.Transport;
 
 import HW.Driver.*;
 
-public class Bus extends Transport implements Competitive{
+public class Bus extends Transport<DriverCatD> implements Competitive{
 
     public Bus(String brand, String model, double engineVolume, DriverCatD driverCatD) {
         super(brand, model, engineVolume, driverCatD);

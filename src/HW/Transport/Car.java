@@ -2,7 +2,7 @@ package HW.Transport;
 
 import HW.Driver.*;
 
-public class Car extends Transport implements Competitive {
+public class Car extends Transport<DriverCatB> implements Competitive {
 
     public Car(String brand, String model, double engineVolume, DriverCatB driverCatB) {
         super(brand, model, engineVolume, driverCatB);
