@@ -1,6 +1,7 @@
 package HW.Transport;
 
 import HW.Driver.*;
+import HW.Enums.*;
 
 public abstract class Transport <T extends Driver>{
     private final String brand;
@@ -14,6 +15,10 @@ public abstract class Transport <T extends Driver>{
         setEngineVolume(engineVolume);
         setDriver(driver);
     }
+
+    public abstract void printType();
+
+    public abstract Type getType();
 
     public String getBrand() {
         return brand;

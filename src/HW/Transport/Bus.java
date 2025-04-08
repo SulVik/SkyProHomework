@@ -1,11 +1,38 @@
 package HW.Transport;
 
 import HW.Driver.*;
+import HW.Enums.*;
 
-public class Bus extends Transport<DriverCatD> implements Competitive{
+public class Bus extends Transport<DriverCatD> implements Competitive {
 
-    public Bus(String brand, String model, double engineVolume, DriverCatD driverCatD) {
+    private PassengerCapacity passengerCapacity;
+    private final Type type = Type.BUS;
+
+    public Bus(String brand, String model, double engineVolume, DriverCatD driverCatD, PassengerCapacity passengerCapacity) {
         super(brand, model, engineVolume, driverCatD);
+        this.passengerCapacity = passengerCapacity;
+    }
+
+    @Override
+    public void printType() {
+        if (passengerCapacity != null) {
+            System.out.println(passengerCapacity);
+        } else {
+            System.out.println("Данных по ТС недостаточно");
+        }
+    }
+
+    public PassengerCapacity getPassengerCapacity() {
+        return passengerCapacity;
+    }
+
+    public void setPassengerCapacity(PassengerCapacity passengerCapacity) {
+        this.passengerCapacity = passengerCapacity;
+    }
+
+    @Override
+    public Type getType() {
+        return type;
     }
 
     @Override
