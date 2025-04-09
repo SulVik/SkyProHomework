@@ -2,6 +2,7 @@ package HW;
 
 import HW.Driver.*;
 import HW.Enums.*;
+import HW.Exceptions.*;
 import HW.Transport.*;
 
 public class Main {
@@ -30,6 +31,11 @@ public class Main {
             transports[i].toFinishMoving();
             System.out.println(transports[i].getType());
             transports[i].printType();
+            try {
+                transports[i].toDoDiagnostic();
+            } catch (TransportTypeException e) {
+                System.out.println(e.getMessage());
+            }
             if (transports[i] instanceof Competitive) {
                 ((Competitive) transports[i]).pitstop();
                 ((Competitive) transports[i]).bestLapTime();

@@ -3,7 +3,7 @@ package HW.Transport;
 import HW.Driver.*;
 import HW.Enums.*;
 
-public class Truck extends Transport<DriverCatC> implements Competitive{
+public class Truck extends Transport<DriverCatC> implements Competitive {
 
     private final LoadCapacity loadCapacity;
     private static final Type TYPE = Type.TRUCK;
@@ -11,6 +11,11 @@ public class Truck extends Transport<DriverCatC> implements Competitive{
     public Truck(String brand, String model, double engineVolume, DriverCatC driverCatC, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume, driverCatC);
         this.loadCapacity = loadCapacity;
+    }
+
+    @Override
+    public void toDoDiagnostic() {
+        System.out.println(this.getBrand() + " " + this.getModel() + " - диагностика пройдена");
     }
 
     @Override

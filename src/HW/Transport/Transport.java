@@ -2,6 +2,7 @@ package HW.Transport;
 
 import HW.Driver.*;
 import HW.Enums.*;
+import HW.Exceptions.*;
 
 public abstract class Transport <T extends Driver>{
     private final String brand;
@@ -15,6 +16,8 @@ public abstract class Transport <T extends Driver>{
         setEngineVolume(engineVolume);
         setDriver(driver);
     }
+
+    public abstract void toDoDiagnostic() throws TransportTypeException;
 
     public abstract void printType();
 

@@ -14,6 +14,11 @@ public class Car extends Transport<DriverCatB> implements Competitive {
     }
 
     @Override
+    public void toDoDiagnostic() {
+        System.out.println(this.getBrand() + " " + this.getModel() + " - диагностика пройдена");
+    }
+
+    @Override
     public void printType() {
         if (cabinType != null) {
             System.out.println(cabinType);
