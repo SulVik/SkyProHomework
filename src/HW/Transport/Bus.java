@@ -2,6 +2,7 @@ package HW.Transport;
 
 import HW.Driver.*;
 import HW.Enums.*;
+import HW.Exceptions.*;
 
 public class Bus extends Transport<DriverCatD> implements Competitive {
 
@@ -20,6 +21,11 @@ public class Bus extends Transport<DriverCatD> implements Competitive {
         } else {
             System.out.println("Данных по ТС недостаточно");
         }
+    }
+
+    @Override
+    public void toDoDiagnostic() throws TransportTypeException {
+        throw new TransportTypeException("Автобусы диагностику проходить не должны");
     }
 
     public PassengerCapacity getPassengerCapacity() {
