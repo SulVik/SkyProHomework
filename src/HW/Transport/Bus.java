@@ -5,8 +5,8 @@ import HW.Enums.*;
 
 public class Bus extends Transport<DriverCatD> implements Competitive {
 
-    private PassengerCapacity passengerCapacity;
-    private final Type type = Type.BUS;
+    private final PassengerCapacity passengerCapacity;
+    private static final Type TYPE = Type.BUS;
 
     public Bus(String brand, String model, double engineVolume, DriverCatD driverCatD, PassengerCapacity passengerCapacity) {
         super(brand, model, engineVolume, driverCatD);
@@ -26,13 +26,9 @@ public class Bus extends Transport<DriverCatD> implements Competitive {
         return passengerCapacity;
     }
 
-    public void setPassengerCapacity(PassengerCapacity passengerCapacity) {
-        this.passengerCapacity = passengerCapacity;
-    }
-
     @Override
     public Type getType() {
-        return type;
+        return TYPE;
     }
 
     @Override

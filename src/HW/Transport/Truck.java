@@ -5,8 +5,8 @@ import HW.Enums.*;
 
 public class Truck extends Transport<DriverCatC> implements Competitive{
 
-    private LoadCapacity loadCapacity;
-    private final Type type = Type.TRUCK;
+    private final LoadCapacity loadCapacity;
+    private static final Type TYPE = Type.TRUCK;
 
     public Truck(String brand, String model, double engineVolume, DriverCatC driverCatC, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume, driverCatC);
@@ -27,13 +27,9 @@ public class Truck extends Transport<DriverCatC> implements Competitive{
         return loadCapacity;
     }
 
-    public void setLoadCapacity(LoadCapacity loadCapacity) {
-        this.loadCapacity = loadCapacity;
-    }
-
     @Override
     public Type getType() {
-        return type;
+        return TYPE;
     }
 
     @Override
