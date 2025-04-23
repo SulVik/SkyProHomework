@@ -2,14 +2,17 @@ package HW.Transport;
 
 import HW.Driver.*;
 import HW.Enums.*;
+import HW.Mechanic.*;
+
+import java.util.*;
 
 public class Car extends Transport<DriverCatB> implements Competitive {
 
     private final CabinType cabinType;
     private static final Type TYPE = Type.CAR;
 
-    public Car(String brand, String model, double engineVolume, DriverCatB driverCatB, CabinType cabinType) {
-        super(brand, model, engineVolume, driverCatB);
+    public Car(String brand, String model, double engineVolume, DriverCatB driverCatB, ArrayList<Mechanic> mechanics, CabinType cabinType) {
+        super(brand, model, engineVolume, driverCatB, mechanics);
         this.cabinType = cabinType;
     }
 
