@@ -3,14 +3,17 @@ package HW.Transport;
 import HW.Driver.*;
 import HW.Enums.*;
 import HW.Exceptions.*;
+import HW.Mechanic.*;
+
+import java.util.*;
 
 public class Bus extends Transport<DriverCatD> implements Competitive {
 
     private final PassengerCapacity passengerCapacity;
     private static final Type TYPE = Type.BUS;
 
-    public Bus(String brand, String model, double engineVolume, DriverCatD driverCatD, PassengerCapacity passengerCapacity) {
-        super(brand, model, engineVolume, driverCatD);
+    public Bus(String brand, String model, double engineVolume, DriverCatD driverCatD, ArrayList<Mechanic> mechanics, PassengerCapacity passengerCapacity) {
+        super(brand, model, engineVolume, driverCatD, mechanics);
         this.passengerCapacity = passengerCapacity;
     }
 

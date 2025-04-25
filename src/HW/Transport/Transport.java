@@ -3,18 +3,31 @@ package HW.Transport;
 import HW.Driver.*;
 import HW.Enums.*;
 import HW.Exceptions.*;
+import HW.Mechanic.*;
+
+import java.util.*;
 
 public abstract class Transport <T extends Driver>{
     private final String brand;
     private final String model;
     private double engineVolume;
     private T driver;
+    private ArrayList<Mechanic> mechanics;
 
-    public Transport(String brand, String model, double engineVolume, T driver) {
+    public Transport(String brand, String model, double engineVolume, T driver, ArrayList<Mechanic> mechanics) {
         this.brand = ((brand == null) || brand.isEmpty()) ? "unknownBrand" : brand;
         this.model = ((model == null) || model.isEmpty()) ? "unknownModel" : model;
         setEngineVolume(engineVolume);
         setDriver(driver);
+        setMechanics(mechanics);
+    }
+
+    public ArrayList<Mechanic> getMechanics() {
+        return mechanics;
+    }
+
+    public void setMechanics(ArrayList<Mechanic> mechanics) {
+        this.mechanics = mechanics;
     }
 
     public abstract void toDoDiagnostic() throws TransportTypeException;
@@ -73,14 +86,14 @@ public abstract class Transport <T extends Driver>{
         }
     }
 
-
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() +
-                " brand='" + brand + '\'' +
+        return "Transport{" +
+                "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", engineVolume=" + engineVolume +
                 ", driver=" + driver +
+                ", mechanics=" + mechanics +
                 '}';
     }
 }
